@@ -49,7 +49,7 @@ const describeArc = (
 
 const leftPoints = (direction: string) => {
   if (direction === 'from-left') {
-    return { start: -200, end: 200 };
+    return { start: -200, end: 150 };
   }
   if (direction === 'from-right') {
     return { start: 0, end: -400 };
@@ -79,7 +79,7 @@ const Logo = ({ logo, radius, direction = 'from-left' }: LogoProps) => {
     from: start,
     to: end,
     config: {
-      mass: 2.3,
+      mass: 1,
       damping: 40,
     },
   });

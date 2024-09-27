@@ -1,4 +1,4 @@
-import { AbsoluteFill } from 'remotion';
+import { AbsoluteFill, Audio, Sequence } from 'remotion';
 import { scene2Schema } from './SceneSchemas';
 import { z } from 'zod';
 import Image from './components/Image';
@@ -6,9 +6,12 @@ import Logo from './components/Logo';
 
 type Scene2Props = z.infer<typeof scene2Schema>;
 
-const Scene2: React.FC<Scene2Props> = ({ img, logo }) => {
+const Scene2: React.FC<Scene2Props> = ({ img, logo, audio }) => {
   return (
     <AbsoluteFill>
+      <Sequence from={20}>
+        <Audio src={audio} />
+      </Sequence>
       <div
         style={{
           display: 'flex',

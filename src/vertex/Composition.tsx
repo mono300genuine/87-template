@@ -54,9 +54,7 @@ const Vertex: React.FC<VertexProps> = ({
 }) => {
   return (
     <AbsoluteFill style={{ background: 'black' }}>
-      <Sequence>
-        <Audio src={staticFile('music.mp3')} volume={audioVolume} />
-      </Sequence>
+      <Audio src={staticFile('music.mp3')} volume={audioVolume} />
       <TransitionSeries>
         <TransitionSeries.Sequence durationInFrames={scene1Duration}>
           <Scene1 {...scene1Props} />
