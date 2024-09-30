@@ -3,16 +3,20 @@ import { scene5Schema } from './SceneSchemas';
 import { z } from 'zod';
 import Image from './components/Image';
 import Logo from './components/Logo';
+import Background from './components/Background';
 
 type Scene5Props = z.infer<typeof scene5Schema>;
 
 const Scene5: React.FC<Scene5Props> = ({ img, logo, audio }) => {
-  const { width } = useVideoConfig();
+  const { width, height } = useVideoConfig();
   return (
     <AbsoluteFill>
       <Sequence from={20}>
         <Audio src={audio} />
       </Sequence>
+      <div style={{ position: 'absolute', width, height }}>
+        <Background scene={5} />
+      </div>
       <Sequence from={-10}>
         <div
           style={{

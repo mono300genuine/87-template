@@ -1,4 +1,4 @@
-import { AbsoluteFill, Audio, Sequence, staticFile } from 'remotion';
+import { AbsoluteFill, Audio, staticFile } from 'remotion';
 import { TransitionSeries, linearTiming } from '@remotion/transitions';
 import { z } from 'zod';
 import { CustomSlidePresentation } from './presentations/CustomSlidePresentation';
