@@ -19,6 +19,9 @@ export const RemotionRoot: React.FC = () => {
           scene1Props: {
             logo: staticFile('Logo.png'),
             audio: staticFile('VO_1.mp3'),
+            title: "Vertex",
+            subtitle: "Financial Services",
+            text: "Where Accuracy Meets Expertise"
           },
           scene2Duration: 180,
           scene2Props: {
