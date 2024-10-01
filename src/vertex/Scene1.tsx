@@ -5,6 +5,9 @@ import Logo from './components/Logo';
 import Background from './components/Background';
 import Circle from './components/Circle';
 import { useTextSplitter } from '../lib/useTextSplitter';
+import { TitleText } from './components/animations/TitleText';
+import { TextRotateY } from './components/animations/TextRotateY';
+import { TitleTextFromRight } from './components/animations/TitleTextFromRight';
 
 type Scene1Props = z.infer<typeof scene1Schema>;
 
@@ -42,9 +45,6 @@ const Scene1: React.FC<Scene1Props> = ({ logo, audio, text, title, subtitle }) =
   // useTextSplitter always for animated text
   // create component for text that comes from top for titleSplit & subtitleSplit
   // create component for text that comes from below and rotates & fades in for textSplit
-  
-
-
 
   return (
     <AbsoluteFill
@@ -63,6 +63,17 @@ const Scene1: React.FC<Scene1Props> = ({ logo, audio, text, title, subtitle }) =
       <div style={{ position: 'relative', width: 500, height: 500 }}>
         <Sequence from={-40}>
           <Logo logo={logo} radius={250} direction="center" />
+          <div
+            style={{
+              position: 'relative',
+              top: 120,
+              left: 50,
+              ...titleSplit.style,
+              color: 'red',
+            }}
+          >
+            <TitleTextFromRight text={titleSplit.text} />
+          </div>
           <div
             style={{
               position: 'absolute',

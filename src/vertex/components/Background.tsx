@@ -19,6 +19,7 @@ const Background = ({ scene }: BackgroundProps) => {
             left: 250 * i - 50,
             top: 250 * j - 125 * (i % 2) - 50,
           }}
+          key={`${i} - ${j}`}
         >
           <Cross color="white" seed={Math.random() * 50} />
         </div>
