@@ -5,15 +5,14 @@ import Logo from './components/Logo';
 import Background from './components/Background';
 import Circle from './components/Circle';
 import { useTextSplitter } from '../lib/useTextSplitter';
-import { TitleText } from './components/animations/TitleText';
-import { TextRotateY } from './components/animations/TextRotateY';
 import { TitleTextFromRight } from './components/animations/TitleTextFromRight';
+import { colorVar } from '../lib/helpers';
 
 type Scene1Props = z.infer<typeof scene1Schema>;
 
 const Scene1: React.FC<Scene1Props> = ({ logo, audio, text, title, subtitle }) => {
   const { width, height } = useVideoConfig();
-
+  
   const titleSplit = useTextSplitter({
     text: title.toUpperCase(),
     fontSize: 130,
@@ -22,7 +21,7 @@ const Scene1: React.FC<Scene1Props> = ({ logo, audio, text, title, subtitle }) =
     maxLines: 1,
     maxWidth: 1000,
   });
-
+  
   const subtitleSplit = useTextSplitter({
     text: subtitle.toUpperCase(),
     fontSize: 100,
@@ -41,6 +40,8 @@ const Scene1: React.FC<Scene1Props> = ({ logo, audio, text, title, subtitle }) =
     maxWidth: 1000,
   });
 
+  console.log(textSplit, "text split");
+  
   // TODO: implement the text animation for all the scenes
   // useTextSplitter always for animated text
   // create component for text that comes from top for titleSplit & subtitleSplit
@@ -66,10 +67,10 @@ const Scene1: React.FC<Scene1Props> = ({ logo, audio, text, title, subtitle }) =
           <div
             style={{
               position: 'relative',
-              top: 120,
+              top: 420,
               left: 50,
               ...titleSplit.style,
-              color: 'red',
+              color: colorVar("accent"),
             }}
           >
             <TitleTextFromRight text={titleSplit.text} />

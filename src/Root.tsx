@@ -14,6 +14,22 @@ export const RemotionRoot: React.FC = () => {
         durationInFrames={900}
         defaultProps={{
           audioVolume: 0.1,
+          colors: {
+            background: '#151515',
+            backgroundText: '#1e1e1e',
+            black: '#000000',
+            white: '#FFFFFF',
+            primary: '#f00',
+            primaryText: '#f00',
+            secondary: '#f00',
+            secondaryText: '#f00',
+            accent: '#FFFF08',
+            accentText: '#f00',
+          },
+          fonts: {
+            primary: 'Montserrat',
+            secondary: "Abel"
+          },
           transitionDuration: 30,
           scene1Duration: 150,
           scene1Props: {

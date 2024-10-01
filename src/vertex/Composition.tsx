@@ -1,4 +1,4 @@
-import { AbsoluteFill, Audio, staticFile } from 'remotion';
+import { AbsoluteFill, Audio, staticFile, useVideoConfig } from 'remotion';
 import { TransitionSeries, linearTiming } from '@remotion/transitions';
 import { z } from 'zod';
 import { CustomSlidePresentation } from './presentations/CustomSlidePresentation';
@@ -16,9 +16,15 @@ import Scene3 from './Scene3';
 import Scene4 from './Scene4';
 import Scene5 from './Scene5';
 import Scene6 from './Scene6';
+import { VideoContext, VideoContextProps } from '../lib/context';
+import { LoadFonts } from '../lib/LoadFonts';
+import { getCSSVariables } from '../lib/helpers';
+import { Colors, Fonts } from '../types';
 
 export const vertexSchema = z.object({
   audioVolume: z.number(),
+  colors: Colors,
+  fonts: Fonts,
   transitionDuration: z.number(),
   scene1Duration: z.number(),
   scene1Props: scene1Schema,
@@ -39,6 +45,8 @@ type VertexProps = z.infer<typeof vertexSchema>;
 const Vertex: React.FC<VertexProps> = ({
   audioVolume,
   transitionDuration,
+  colors,
+  fonts,
   scene1Duration,
   scene1Props,
   scene2Duration,
@@ -52,50 +60,63 @@ const Vertex: React.FC<VertexProps> = ({
   scene6Duration,
   scene6Props,
 }) => {
+  const { id } = useVideoConfig();
+  const context: VideoContextProps = {
+    adId: id,
+    baseUrl: 'http://localhost:3000',
+  }
+
   return (
-    <AbsoluteFill style={{ background: 'black' }}>
-      <Audio src={staticFile('music.mp3')} volume={audioVolume} />
-      <TransitionSeries>
-        <TransitionSeries.Sequence durationInFrames={scene1Duration}>
-          <Scene1 {...scene1Props} />
-        </TransitionSeries.Sequence>
-        <TransitionSeries.Transition
-          presentation={CustomSlidePresentation({ direction: 'from-right' })}
-          timing={linearTiming({ durationInFrames: transitionDuration })}
-        />
-        <TransitionSeries.Sequence durationInFrames={scene2Duration}>
-          <Scene2 {...scene2Props} />
-        </TransitionSeries.Sequence>
-        <TransitionSeries.Transition
-          presentation={CustomSlidePresentation({ direction: 'from-left' })}
-          timing={linearTiming({ durationInFrames: transitionDuration })}
-        />
-        <TransitionSeries.Sequence durationInFrames={scene3Duration}>
-          <Scene3 {...scene3Props} />
-        </TransitionSeries.Sequence>
-        <TransitionSeries.Transition
-          presentation={CustomSlidePresentation({ direction: 'from-bottom' })}
-          timing={linearTiming({ durationInFrames: transitionDuration })}
-        />
-        <TransitionSeries.Sequence durationInFrames={scene4Duration}>
-          <Scene4 {...scene4Props} />
-        </TransitionSeries.Sequence>
-        <TransitionSeries.Transition
-          presentation={CustomSlidePresentation({ direction: 'from-top' })}
-          timing={linearTiming({ durationInFrames: transitionDuration })}
-        />
-        <TransitionSeries.Sequence durationInFrames={scene5Duration}>
-          <Scene5 {...scene5Props} />
-        </TransitionSeries.Sequence>
-        <TransitionSeries.Transition
-          presentation={CustomSlidePresentation({ direction: 'from-bottom' })}
-          timing={linearTiming({ durationInFrames: transitionDuration })}
-        />
-        <TransitionSeries.Sequence durationInFrames={scene6Duration}>
-          <Scene6 {...scene6Props} />
-        </TransitionSeries.Sequence>
-      </TransitionSeries>
-    </AbsoluteFill>
+    <VideoContext.Provider value={context}>
+      <LoadFonts fonts={fonts}>
+        <AbsoluteFill id={id} style={{
+          background: 'black',
+          ...getCSSVariables({ colors: colors, fonts: fonts, roundness: 1 }),
+        }}>
+          <Audio src={staticFile('music.mp3')} volume={audioVolume} />
+          <TransitionSeries>
+            <TransitionSeries.Sequence durationInFrames={scene1Duration}>
+              <Scene1 {...scene1Props} />
+            </TransitionSeries.Sequence>
+            <TransitionSeries.Transition
+              presentation={CustomSlidePresentation({ direction: 'from-right' })}
+              timing={linearTiming({ durationInFrames: transitionDuration })}
+            />
+            <TransitionSeries.Sequence durationInFrames={scene2Duration}>
+              <Scene2 {...scene2Props} />
+            </TransitionSeries.Sequence>
+            <TransitionSeries.Transition
+              presentation={CustomSlidePresentation({ direction: 'from-left' })}
+              timing={linearTiming({ durationInFrames: transitionDuration })}
+            />
+            <TransitionSeries.Sequence durationInFrames={scene3Duration}>
+              <Scene3 {...scene3Props} />
+            </TransitionSeries.Sequence>
+            <TransitionSeries.Transition
+              presentation={CustomSlidePresentation({ direction: 'from-bottom' })}
+              timing={linearTiming({ durationInFrames: transitionDuration })}
+            />
+            <TransitionSeries.Sequence durationInFrames={scene4Duration}>
+              <Scene4 {...scene4Props} />
+            </TransitionSeries.Sequence>
+            <TransitionSeries.Transition
+              presentation={CustomSlidePresentation({ direction: 'from-top' })}
+              timing={linearTiming({ durationInFrames: transitionDuration })}
+            />
+            <TransitionSeries.Sequence durationInFrames={scene5Duration}>
+              <Scene5 {...scene5Props} />
+            </TransitionSeries.Sequence>
+            <TransitionSeries.Transition
+              presentation={CustomSlidePresentation({ direction: 'from-bottom' })}
+              timing={linearTiming({ durationInFrames: transitionDuration })}
+            />
+            <TransitionSeries.Sequence durationInFrames={scene6Duration}>
+              <Scene6 {...scene6Props} />
+            </TransitionSeries.Sequence>
+          </TransitionSeries>
+        </AbsoluteFill>
+      </LoadFonts>
+    </VideoContext.Provider>
   );
 };
 
