@@ -29,6 +29,7 @@ const Scene1: React.FC<Scene1Props> = (props) => {
     letterSpacing: '6px',
     maxLines: 1,
     maxWidth: 1000,
+  
   });
 
   // const subtitleSplit = useTextSplitter({
@@ -50,8 +51,8 @@ const Scene1: React.FC<Scene1Props> = (props) => {
         alignItems: 'center',
       }}
     >
-      {/* The background component is always the same
-      get's it's input from the root */}
+      {/* The background component is always the same setup like this.
+      Get's it's input from the root */}
         <Background {...props.background} />
 
       <div

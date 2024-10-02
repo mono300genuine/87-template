@@ -1,6 +1,9 @@
 # Remotion template for the video
 
-## How to use
+## Naming scheme
+
+
+## How to use this starter
 
 Clone this repo.
 
@@ -8,29 +11,55 @@ remove origin repo and add your own with the following command
 
 `git remote remove origin`
 
-Create a repo on github for your video.
+Create a new empty repo on github for your video template code! Have a look at what to name it below.
 
-Then:
+Then add the new repo you ust created as the origin.
 
-`git remote add origin ...` the new repo url.
-You can find this command when you created a new blank repo. 
+`git remote add origin URLHere` 
+> You can find this command when you created a new blank repo. 
 
-Install: `pnpm i`
+Then you can install and use it like any other remotion project.
+`pnpm i`
 
-Start Remotion studio: `pnpm run start`.
+Start Remotion studio:
 
-When you push you'll have to set the upstream
+ `pnpm run start` or `pnpm start`
 
-git: `git add .`
+When you push for the first time you'll have to set the upstream
+
+`git add .`
 `git commit -m "add: template ..." `
 `git push -u origin main`
 
-## Naming scheme
-
-**T0029** - template name
+**Template Name & Number**
 
 name your repo TemplateNumber-template
 example: template 29 would be "29-template"
+
+## Text splitter
+
+Is a component we always use for text animations.
+
+Text animations have their own folder in /components -> /animations
+
+Many text animations need to know where the line breaks are and we also need to make sure that the text won't overflow. 
+So for that we have `useTextSplitter` hook.
+
+```ts
+const text = useTextSplitter({
+  text: props.text,
+  fontSize: 160,
+  fontWeight: 'bold',
+  maxLines: 2,
+  maxWidth: 1000,
+});
+```
+
+you give it all the text style as input and it will give you back:
+
+- text that has line breaks in it and it
+- css styles with adjusted fontSize so that the text won't overflow the desired width and heigth (height is calculated with `fontSize * maxLines`)
+
 
 ## Example root props
 
@@ -52,15 +81,11 @@ const props: VideoProps = {
     primary: 'Poppins',
     secondary: 'Roboto',
   },
-  music: staticFile('/music/29.mp3'),
-  roundness: 1,
   // See 'Backgrounds' section below
   background: {
-    type: 'squares',
+    type: 'static',
     background: 'primary',
   },
-  transitionDuration: 30,
-  scene1Duration: 150,
   scene1Props: {
     logo: staticFile('Logo.png'),
     audio: staticFile('VO_1.mp3'),
@@ -68,7 +93,6 @@ const props: VideoProps = {
     subtitle: 'Financial Services',
     text: 'Where Accuracy Meets Expertise',
   },
-  scene2Duration: 180,
   scene2Props: {
     logo: staticFile('Logo.png'),
     img: staticFile('Media_1.jpg'),
@@ -83,14 +107,17 @@ const props: VideoProps = {
 Your work will be mainly in the Scenes files. 
 There you can create the video with remotion
 
+## Music
+
+We don't need to implement the Music / Audio
+
 ## Consts
 
 We have WIDTH & HEIGHT instead of using the useVideoConfig()
 
-
 ### Backgrounds
 
-You can define a new background like this:
+You create a new background like this:
 
 ```tsx
 export const ImageBackground = defineBackground({
@@ -116,10 +143,11 @@ and then reference the ImageBackground in [background/index.ts](src/backgrounds/
 export const BACKGROUNDS = [
   // Added ImageBackground here
   ImageBackground,
+  OtherBackground,
 ];
 ```
 
-now your background is available in VideoProps
+now your background is available in VideoProps by matching the "type" string
 
 ```ts
 const props = {
@@ -132,14 +160,21 @@ const props = {
 }
 
 ```
-or 
+
+
+Static Background is for a 1 Color Background. 
+
 ```ts
-    background: {
-        type: 'static',
-        background: 'background',
+  background: {
+      type: 'static',
+      background: 'background',
   },
 ```
-for a background with color "background"
+explanation: `type: static`, `background: 'background'`
+We get the background with the type 'static' which is just a unique identifier string.
+And we pass the color to it with background: 'background'. the color is coming from colors.background. 
+
+See below for colors.
 
 Backgrounds should be standalone components.
 
@@ -147,7 +182,7 @@ Meaning we could swap into any other Composition.
 
 ### Colors
 
-We have the following structure for colors:
+We have the following structure for colors in Root.tsx:
 
 ```ts
 const colors = {
@@ -169,40 +204,33 @@ Same for primaryText and secondaryText.
 
 You will have to adjust the colors to suit your video of course.
 
-You can use these colors with using `colorVar` function, so to get primary color you would use `colorVar('primary')`. 
+You use these colors with using the `colorVar` function, so to get primary color you would use `colorVar('primary')`. 
+
+example: 
+```ts
+
+<p style={{
+  color: colorVar('primary'),
+  ...title.style,
+  textAlign: 'center',
+}}>Hello World</p>
+```
+
 
 ### Fonts
 
-For fonts we have two fonts: `primary` and `secondary`. Primary font is applied to every text, so no need to apply that separately, but you can use secondary font with `fontVar('secondary')`.
+For fonts we have two fonts: `primary` and `secondary`.
+You set the fonts in the Root.tsx file for each Composition.
+
+Primary font is applied to every text, so no need to apply that separately,
+but you can use secondary font with `fontVar('secondary')`.
+
+useTextSplitter() hook also has a font property.
 
 We support 100 most popular Google fonts right now (see [fontFamily.ts](/src/lib/fontFamily.ts))
 
 fontFamily is an output of the useTextSplitter() hook. 
-example: fontFamily: var(--font-primary)
 
-## Text splitter
+example: 
+`fontFamily: var(--font-primary)`
 
-Many text animations need to know where the line breaks are and we also need to make sure that the text won't overflow. So for that we have `useTextSplitter` hook.
-
-```ts
-const text = useTextSplitter({
-  text: props.text,
-  fontSize: 160,
-  fontWeight: 'bold',
-  maxLines: 2,
-  maxWidth: 1000,
-});
-```
-
-you give it all the text style as input and it will give you back:
-
-- text that has line breaks in it and it
-- css styles with adjusted fontSize so that the text won't overflow the desired width and heigth (height is calculated with `fontSize * maxLines`)
-
-so you can use that text like this:
-
-```tsx
-<p style={text.style}>{text.text}</p>
-```
-
-here `text.text` will have \n line breaks in it.
