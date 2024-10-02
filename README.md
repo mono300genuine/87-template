@@ -13,7 +13,7 @@ Create a repo on github for your video.
 Then:
 
 `git remote add origin ...` the new repo url.
-You usually find this command when you create a new blank repo. 
+You can find this command when you created a new blank repo. 
 
 Install: `pnpm i`
 
@@ -74,6 +74,7 @@ const props: VideoProps = {
     img: staticFile('Media_1.jpg'),
     audio: staticFile('VO_2.mp3'),
   },
+  ...
 };
 ```
 
@@ -81,6 +82,11 @@ const props: VideoProps = {
 
 Your work will be mainly in the Scenes files. 
 There you can create the video with remotion
+
+## Consts
+
+We have WIDTH & HEIGHT instead of using the useVideoConfig()
+
 
 ### Backgrounds
 
@@ -124,54 +130,24 @@ const props = {
         image: { src: 'https://...' }
   },
 }
+
 ```
-
-### Transitions
-
-Transitions wrap the Layout, so you should always use the `children` prop somewhere in the transition.
-You can have multiple transitions per scene, so there can be one for the beginning and one for the end of the scene
-
-You can define a new transition like this:
-
-```tsx
-export const FadeIn = defineTransition({
-  type: 'start-fade',
-  description: 'Fade in of the scene',
-  schema: z.object({}),
-  component: ({ children }) => {
-    const frame = useCurrentFrame();
-    const opacity = defaultSpring({ frame, durationInFrames: 60 });
-    return <AbsoluteFill style={{ opacity }}>{children}</AbsoluteFill>;
+or 
+```ts
+    background: {
+        type: 'static',
+        background: 'background',
   },
-});
 ```
+for a background with color "background"
 
-and then reference it in [transitions/index.ts](src/transitions/index.ts)
+Backgrounds should be standalone components.
 
-```ts
-export const TRANSITIONS = [
-  // Added FadeIn here
-  FadeIn,
-];
-```
-
-now your transition is available in VideoProps
-
-```ts
-const props = {
-  scenes: [
-    {
-      transitions: [{ type: 'start-fade' }],
-    },
-  ],
-};
-```
-
-## CSS Variables
+Meaning we could swap into any other Composition.
 
 ### Colors
 
-We have 10 shared colors for all templates:
+We have the following structure for colors:
 
 ```ts
 const colors = {
@@ -193,7 +169,7 @@ Same for primaryText and secondaryText.
 
 You will have to adjust the colors to suit your video of course.
 
-You can use these colors with using `colorVar` function, so to get primary color you would use `colorVar('primary')`. You should only use the 10 colors and nothing else.
+You can use these colors with using `colorVar` function, so to get primary color you would use `colorVar('primary')`. 
 
 ### Fonts
 
@@ -201,6 +177,8 @@ For fonts we have two fonts: `primary` and `secondary`. Primary font is applied 
 
 We support 100 most popular Google fonts right now (see [fontFamily.ts](/src/lib/fontFamily.ts))
 
+fontFamily is an output of the useTextSplitter() hook. 
+example: fontFamily: var(--font-primary)
 
 ## Text splitter
 

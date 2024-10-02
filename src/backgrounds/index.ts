@@ -1,11 +1,10 @@
 import { z } from 'zod'
-
 import { ImageBackground } from './_/Image'
 import { LinesBackground } from './_/Lines'
 import { RealEstateBackground } from './_/RealEstate'
 import { SquaresBackground } from './_/Squares'
 import { StaticBackground } from './_/Static'
-import { LampedCrosses } from './_/LampedCrosses'
+import { CrossesBackground } from './_/Crosses'
 
 
 export const BACKGROUNDS = [
@@ -15,7 +14,7 @@ export const BACKGROUNDS = [
   ImageBackground,
   StaticBackground,
   RealEstateBackground,
-  LampedCrosses
+  CrossesBackground
 ]
 
 type BackgroundSchema = (typeof BACKGROUNDS)[number]['schema']

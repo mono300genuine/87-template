@@ -1,5 +1,5 @@
 import { Composition, staticFile } from 'remotion';
-import Vertex, { vertexSchema } from './example/Composition';
+import Vertex, { vertexSchema } from './Composition/Composition';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -16,21 +16,20 @@ export const RemotionRoot: React.FC = () => {
           audioVolume: 0.1,
           colors: {
             background: '#151515',
-            backgroundText: '#1e1e1e',
+            backgroundText: '#FFFFFF',
             black: '#000000',
             white: '#FFFFFF',
             primary: '#f00',
-            primaryText: '#f00',
+            primaryText: '#FFFFFF',
             secondary: '#5118DB',
             secondaryText: '#f00',
             accent: '#FFFF08',
             accentText: '#f00',
           },
           background: {
-            type: 'lamped-crosses',
+            type: 'crosses',
             background: 'background',
             stroke: 'backgroundText',
-            scene: 6
           },
           fonts: {
             primary: 'Montserrat',
@@ -41,7 +40,7 @@ export const RemotionRoot: React.FC = () => {
           scene1Props: {
             logo: staticFile('Logo.png'),
             audio: staticFile('VO_1.mp3'),
-            title: "Vertex",
+            title: "Hello world",
             subtitle: "Financial Services",
             text: "Where Accuracy Meets Expertise"
           },
