@@ -90,7 +90,7 @@ const SlidePresentation: React.FC<SlidePresentationProps> = ({
   return <AbsoluteFill style={style}>{children}</AbsoluteFill>;
 };
 
-export const CustomSlidePresentation = (props?: SlideProps): TransitionPresentation<SlideProps> => {
+export const WideSlidePresentation = (props?: SlideProps): TransitionPresentation<SlideProps> => {
   return {
     component: SlidePresentation,
     props: props ?? {},

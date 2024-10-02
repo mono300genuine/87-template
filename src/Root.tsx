@@ -1,11 +1,11 @@
 import { Composition, staticFile } from 'remotion';
-import Vertex, { vertexSchema } from './vertex/Composition';
+import Vertex, { vertexSchema } from './example/Composition';
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
-        id="Vertex"
+        id="Template"
         component={Vertex}
         schema={vertexSchema}
         fps={30}
@@ -21,10 +21,16 @@ export const RemotionRoot: React.FC = () => {
             white: '#FFFFFF',
             primary: '#f00',
             primaryText: '#f00',
-            secondary: '#f00',
+            secondary: '#5118DB',
             secondaryText: '#f00',
             accent: '#FFFF08',
             accentText: '#f00',
+          },
+          background: {
+            type: 'lamped-crosses',
+            background: 'background',
+            stroke: 'backgroundText',
+            scene: 6
           },
           fonts: {
             primary: 'Montserrat',

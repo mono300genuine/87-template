@@ -1,5 +1,5 @@
 import { useCurrentFrame } from 'remotion'
-import { defaultSpring } from '../../../lib/helpers';
+import { defaultSpring } from '../../lib/helpers';
 
 
 

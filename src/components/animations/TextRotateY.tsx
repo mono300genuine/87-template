@@ -1,6 +1,6 @@
 import { random, useCurrentFrame } from 'remotion'
 
-import { defaultSpring } from '../../../lib/helpers';
+import { defaultSpring } from '../../lib/helpers';
 
 export const TextRotateY = ({ text, startFrom = 66 }: { text: string; startFrom?: number }) => {
   const frame = useCurrentFrame()
