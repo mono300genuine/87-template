@@ -15,8 +15,9 @@ import { Colors, Fonts } from '../types';
 import { BackgroundProps } from '../backgrounds';
 import { WideSlidePresentation } from '../transitions/WideSlidePresentation';
 
-export const vertexSchema = z.object({
+export const MainSchema = z.object({
   audioVolume: z.number(),
+  music: z.string(),
   colors: Colors,
   fonts: Fonts,
   background:BackgroundProps,
@@ -35,9 +36,9 @@ export const vertexSchema = z.object({
   scene6Props: scene6Schema,
 });
 
-type VertexProps = z.infer<typeof vertexSchema>;
+type MainProps = z.infer<typeof MainSchema>;
 
-const Vertex: React.FC<VertexProps> = ({
+const Main: React.FC<MainProps> = ({
   audioVolume,
   transitionDuration,
   colors,
@@ -117,4 +118,4 @@ const Vertex: React.FC<VertexProps> = ({
   );
 };
 
-export default Vertex;
+export default Main;

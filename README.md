@@ -109,7 +109,8 @@ There you can create the video with remotion
 
 ## Music
 
-We don't need to implement the Music / Audio
+We don't need to implement the Audio voice over but we have a prop in the root for the music.
+Put the music file in the /public folder.
 
 ## Consts
 

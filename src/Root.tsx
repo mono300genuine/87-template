@@ -1,19 +1,21 @@
 import { Composition, staticFile } from 'remotion';
-import Vertex, { vertexSchema } from './Composition/Composition';
+import { MainSchema } from './Composition/Composition';
+import Main from './Composition/Composition';
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
         id="Template"
-        component={Vertex}
-        schema={vertexSchema}
+        component={Main}
+        schema={MainSchema}
         fps={30}
         width={1920}
         height={1080}
         durationInFrames={900}
         defaultProps={{
-          audioVolume: 0.1,
+          audioVolume: 0.5,
+          music: staticFile('music.mp3'),
           colors: {
             background: '#151515',
             backgroundText: '#FFFFFF',
