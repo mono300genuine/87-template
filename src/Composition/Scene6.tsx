@@ -8,7 +8,6 @@ import { colorVar } from '../lib/helpers';
 
 export const scene6Schema = z.object({
   logo: z.string(),
-  audio: z.string(),
 });
 
 type Scene6Props = z.infer<typeof scene6Schema> & { background: BackgroundProps };

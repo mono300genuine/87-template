@@ -1,7 +1,6 @@
 import { AbsoluteFill } from 'remotion';
 import { z } from 'zod';
 import { useTextSplitter } from '../lib/useTextSplitter';
-
 import { colorVar } from '../lib/helpers';
 import { TitleTextFromRight } from '../components/animations/TitleTextFromRight';
 import { Background } from '../components/Background';
@@ -11,17 +10,15 @@ import { BackgroundProps } from '../backgrounds';
 
 export const scene1Schema = z.object({
   logo: z.string(),
-  audio: z.string(),
   title: z.string(),
-  subtitle: z.string(),
-  text: z.string(),
+  subtitle: z.string().optional(),
 
 });
 type Scene1Props = z.infer<typeof scene1Schema> & { background: BackgroundProps };
 
 const Scene1: React.FC<Scene1Props> = (props) => {
 
-// we make the text conform to available width, fontFamily, fontWeight, and fontSize and add \n to the text
+  // we make the text conform to available width, fontFamily, fontWeight, and fontSize and add \n to the text
   const titleSplit = useTextSplitter({
     text: props.title.toUpperCase(),
     fontSize: 130,
@@ -29,11 +26,11 @@ const Scene1: React.FC<Scene1Props> = (props) => {
     letterSpacing: '6px',
     maxLines: 1,
     maxWidth: 1000,
-  
+
   });
 
   // const subtitleSplit = useTextSplitter({
-  //   text: props.subtitle.toUpperCase(),
+  //   text: props.subtitle,
   //   fontSize: 100,
   //   fontWeight: '600',
   //   letterSpacing: '6px',
@@ -41,7 +38,7 @@ const Scene1: React.FC<Scene1Props> = (props) => {
   //   maxWidth: 1000,
   // });
 
-  
+
 
   return (
     <AbsoluteFill
@@ -53,11 +50,11 @@ const Scene1: React.FC<Scene1Props> = (props) => {
     >
       {/* The background component is always the same setup like this.
       Get's it's input from the root */}
-        <Background {...props.background} />
+      <Background {...props.background} />
 
       <div
         style={{
-          textAlign:'center',
+          textAlign: 'center',
           width: WIDTH,
           height: HEIGHT,
           display: 'flex',

@@ -11,7 +11,6 @@ import { colorVar } from '../lib/helpers';
 export const scene2Schema = z.object({
   logo: z.string(),
   img: z.string(),
-  audio: z.string(),
 });
 type Scene2Props = z.infer<typeof scene2Schema> & { background: BackgroundProps };
 
