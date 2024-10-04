@@ -14,6 +14,9 @@ import { getCSSVariables } from '../lib/helpers';
 import { Colors, Fonts } from '../types';
 import { BackgroundProps } from '../backgrounds';
 import { WideSlidePresentation } from '../transitions/WideSlidePresentation';
+import { customCenterPresentation } from '../transitions/CenterPresentation';
+import { HEIGHT, WIDTH } from '../lib/consts';
+import { customL2RPresentation } from '../transitions/Left2RightPresentation';
 
 export const MainSchema = z.object({
   audioVolume: z.number(),
@@ -58,12 +61,15 @@ const Main: React.FC<MainProps> = ({
   scene6Props,
 }) => {
   const { id } = useVideoConfig();
+  
+  // You work will be mainly with the Scenes files   
 
-  // Idea is that you don't have to change this file.
-  // You work with the Scenes files   
+  // Work in this File: 
+  // adapt the transitions to an existing one or to your new one
 
   // If you want to use a different component than a <TransitionSeries>
   // then you'll have to talk to me why it's necessary. 
+
 
   return (
       <LoadFonts fonts={fonts}>
@@ -85,7 +91,7 @@ const Main: React.FC<MainProps> = ({
               <Scene2 {...scene2Props} background={background} />
             </TransitionSeries.Sequence>
             <TransitionSeries.Transition
-              presentation={WideSlidePresentation({ direction: 'from-left' })}
+              presentation={customCenterPresentation({height:HEIGHT, width:WIDTH})}
               timing={linearTiming({ durationInFrames: transitionDuration })}
             />
             <TransitionSeries.Sequence durationInFrames={scene3Duration}>
@@ -99,7 +105,7 @@ const Main: React.FC<MainProps> = ({
               <Scene4 {...scene4Props} background={background} />
             </TransitionSeries.Sequence>
             <TransitionSeries.Transition
-              presentation={WideSlidePresentation({ direction: 'from-top' })}
+              presentation={customL2RPresentation({height:HEIGHT, width:WIDTH})}
               timing={linearTiming({ durationInFrames: transitionDuration })}
             />
             <TransitionSeries.Sequence durationInFrames={scene5Duration}>

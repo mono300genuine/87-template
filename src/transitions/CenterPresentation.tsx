@@ -18,7 +18,8 @@ const CenterPresentation: React.FC<
   passedProps,
 }) => {
   const fullSize = Math.sqrt(passedProps.width ** 2 + passedProps.height ** 2);
-
+  console.log(presentationProgress, "progi");
+  
   const size = fullSize * presentationProgress;
 
   const [clipId] = useState(() => String(random(null)));
@@ -26,6 +27,9 @@ const CenterPresentation: React.FC<
     return {
       width: "100%",
       height: "100%",
+      // display:'flex',
+      // justifyContent:'center',
+      // alignItems:'center',
       clipPath:
         presentationDirection === "exiting" ? undefined : `url(#${clipId})`,
     };
