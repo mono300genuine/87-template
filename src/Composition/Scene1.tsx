@@ -26,7 +26,6 @@ const Scene1: React.FC<Scene1Props> = (props) => {
     letterSpacing: '6px',
     maxLines: 1,
     maxWidth: 1000,
-
   });
 
   // const subtitleSplit = useTextSplitter({
