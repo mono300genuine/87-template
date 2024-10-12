@@ -58,6 +58,8 @@ const splitTextIntoLines = ({
   template.appendChild(element);
 
   const words = inputText.replaceAll('\n', ' ').split(' ').filter(Boolean);
+
+  console.log(words, 'WORDS');
   let previousWords: string[] = [];
   const wordLines: string[][] = [];
   for (const word of words) {

@@ -84,10 +84,23 @@ const SlidePresentation: React.FC<SlidePresentationProps> = ({
       alignItems: 'center',
       ...directionStyle,
       ...(presentationDirection === 'entering' ? enterStyle : exitStyle),
+      // filter: `blur(100px)`,
     };
   }, [directionStyle, enterStyle, exitStyle, presentationDirection]);
 
-  return <AbsoluteFill style={style}>{children}</AbsoluteFill>;
+  return (
+    <>
+      <AbsoluteFill style={style}>{children}</AbsoluteFill>
+      <svg>
+        <defs>
+          {/* Filter blur */}
+          <filter id="slide-blur-filter" x="0" y="-0.5">
+            <feGaussianBlur stdDeviation="100" />
+          </filter>
+        </defs>
+      </svg>
+    </>
+  );
 };
 
 export const WideSlidePresentation = (props?: SlideProps): TransitionPresentation<SlideProps> => {

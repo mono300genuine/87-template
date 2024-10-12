@@ -1,30 +1,30 @@
 import { Composition, staticFile } from 'remotion';
-import { MainSchema } from './Composition/Composition';
-import Main from './Composition/Composition';
+import { MainSchema as Composition2Schema } from './Composition/Composition';
+import Composition2 from './Composition/Composition';
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
-        id="Template"
-        component={Main}
-        schema={MainSchema}
+        id="Composition2"
+        component={Composition2}
+        schema={Composition2Schema}
         fps={30}
         width={1920}
         height={1080}
         durationInFrames={900}
         defaultProps={{
           audioVolume: 0.5,
-          music: staticFile('music.mp3'),
+          music: staticFile('composition-2/audio/music/music.mp3'),
           colors: {
-            background: '#151515',
+            background: '#FFFFFF',
             backgroundText: '#FFFFFF',
             black: '#000000',
             white: '#FFFFFF',
             primary: '#f00',
-            primaryText: '#FFFFFF',
+            primaryText: '#F02C58',
             secondary: '#5118DB',
-            secondaryText: '#f00',
+            secondaryText: '#52ABD7',
             accent: '#FFFF08',
             accentText: '#f00',
           },
@@ -35,37 +35,49 @@ export const RemotionRoot: React.FC = () => {
           },
           fonts: {
             primary: 'Montserrat',
-            secondary: "Abel"
+            secondary: 'Abel',
           },
           transitionDuration: 30,
           scene1Duration: 150,
           scene1Props: {
-            logo: staticFile('Logo.png'),
-            title: "Hello world",
+            logo: staticFile('composition-2/Logo.png'),
+            title: 'MEDICARE INSURANCE\n MADE SIMPLE',
+            voiceOver: staticFile('composition-2/audio/vo/VO_1.mp3'),
           },
           scene2Duration: 180,
           scene2Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_1.jpg'),
+            logo: staticFile('composition-2/Logo.png'),
+            img: staticFile('composition-2/Media_1.jpg'),
+            title: 'OVER 20 YEARS\nOF DEDICATED \nMEDICARE\nEXPERTISE AT\n YOUR SERVICE',
+            voiceOver: staticFile('composition-2/audio/vo/VO_2.mp3'),
           },
           scene3Duration: 180,
           scene3Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_2.jpg'),
+            logo: staticFile('composition-2/Logo.png'),
+            img: staticFile('composition-2/Media_2.jpg'),
+            title: 'NAVIGATING\n INSURANCE CAN\n BE CONFUSING\n AND OVERWHELMING',
+            voiceOver: staticFile('composition-2/audio/vo/VO_3.mp3'),
           },
           scene4Duration: 180,
           scene4Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_3.jpg'),
+            logo: staticFile('composition-2/Logo.png'),
+            img: staticFile('composition-2/Media_6.jpg'),
+            title: 'OUR\n KNOWLEDGEABLE\n STAFF SIMPLIFIES\n THE PROCESS',
+            voiceOver: staticFile('composition-2/audio/vo/VO_4.mp3'),
           },
           scene5Duration: 180,
           scene5Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_4.jpg'),
+            logo: staticFile('composition-2/Logo.png'),
+            img: staticFile('composition-2/Media_4.jpg'),
+            title: 'ENJOY PEACE\n OF MIND\n WITH THE\n RIGHT MEDICARE',
+            voiceOver: staticFile('composition-2/audio/vo/VO_5.mp3'),
           },
           scene6Duration: 180,
           scene6Props: {
-            logo: staticFile('Logo.png'),
+            logo: staticFile('composition-2/Logo.png'),
+            title: 'CONTACT HEALTH INSURANCE\nASSOCIATES TODAY',
+            phone: '203-239-4044',
+            voiceOver: staticFile('composition-2/audio/vo/VO_6.mp3'),
           },
         }}
       />

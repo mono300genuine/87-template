@@ -1,0 +1,930 @@
+%!Adobe-FontList 1.23
+%Locale:0x80a
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ArialMT
+FamilyName:Arial
+StyleName:Regular
+FullName:Arial
+MenuName:Arial
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIAL.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:1036584
+FileModTime:1721674335
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial
+NameArray:0,Win,1,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-BoldMT
+FamilyName:Arial
+StyleName:Bold
+FullName:Arial Bold
+MenuName:Arial
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALBD 1.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:980756
+FileModTime:1721674335
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial Bold
+NameArray:0,Win,1,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-BoldMT
+FamilyName:Arial
+StyleName:Bold
+FullName:Arial Bold
+MenuName:Arial
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALBD.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:980756
+FileModTime:1721674335
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial Bold
+NameArray:0,Win,1,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-BoldItalicMT
+FamilyName:Arial
+StyleName:Bold Italic
+FullName:Arial Bold Italic
+MenuName:Arial
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALBI 1.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:721144
+FileModTime:1721674335
+WeightClass:700
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Arial Bold Italic
+NameArray:0,Win,1,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-BoldItalicMT
+FamilyName:Arial
+StyleName:Bold Italic
+FullName:Arial Bold Italic
+MenuName:Arial
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALBI.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:721144
+FileModTime:1721674335
+WeightClass:700
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Arial Bold Italic
+NameArray:0,Win,1,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-BlackItalic
+FamilyName:Arial Black
+StyleName:Italic
+FullName:Arial Black Italic
+MenuName:Arial Black
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALBLACKITALIC.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:65544
+FileModTime:1721674335
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Arial Black Italic
+NameArray:0,Win,1,Arial Black
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-ItalicMT
+FamilyName:Arial
+StyleName:Italic
+FullName:Arial Italic
+MenuName:Arial
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALI 1.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:717428
+FileModTime:1721674335
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Arial Italic
+NameArray:0,Win,1,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-ItalicMT
+FamilyName:Arial
+StyleName:Italic
+FullName:Arial Italic
+MenuName:Arial
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALI.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:717428
+FileModTime:1721674335
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Arial Italic
+NameArray:0,Win,1,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-Lgt
+FamilyName:Arial Light
+StyleName:Regular
+FullName:Arial-Lgt
+MenuName:Arial Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALLGT.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:22020
+FileModTime:1721674335
+WeightClass:300
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial-Lgt
+NameArray:0,Win,1,Arial Light
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-LgtItl
+FamilyName:Arial Light
+StyleName:Italic
+FullName:Arial-LgtItl
+MenuName:Arial Light
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALLGTITL.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:23792
+FileModTime:1721674335
+WeightClass:300
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial-LightItalic
+NameArray:0,Win,1,Arial Light
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ArialNarrow
+FamilyName:Arial
+StyleName:Narrow
+FullName:Arial Narrow
+MenuName:Arial Narrow
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALN.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:175956
+FileModTime:1721674335
+WeightClass:400
+WidthClass:3
+AngleClass:0
+NameArray:0,Mac,4,Arial Narrow
+NameArray:0,Win,1,Arial Narrow
+NameArray:0,Win,16,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ArialNarrow-Bold
+FamilyName:Arial
+StyleName:Narrow Bold
+FullName:Arial Narrow Bold
+MenuName:Arial Narrow
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALNB.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:180740
+FileModTime:1721674335
+WeightClass:700
+WidthClass:3
+AngleClass:0
+NameArray:0,Mac,4,Arial Narrow Bold
+NameArray:0,Win,1,Arial Narrow
+NameArray:0,Win,16,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ArialNarrow-BoldItalic
+FamilyName:Arial
+StyleName:Narrow Bold Italic
+FullName:Arial Narrow Bold Italic
+MenuName:Arial Narrow
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALNBI.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:180084
+FileModTime:1721674335
+WeightClass:700
+WidthClass:3
+AngleClass:1
+NameArray:0,Mac,4,Arial Narrow Bold Italic
+NameArray:0,Win,1,Arial Narrow
+NameArray:0,Win,16,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ArialNarrow-Italic
+FamilyName:Arial
+StyleName:Narrow Italic
+FullName:Arial Narrow Italic
+MenuName:Arial Narrow
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIALNI.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:181124
+FileModTime:1721674335
+WeightClass:400
+WidthClass:3
+AngleClass:1
+NameArray:0,Mac,4,Arial Narrow Italic
+NameArray:0,Win,1,Arial Narrow
+NameArray:0,Win,16,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-Black
+FamilyName:Arial
+StyleName:Black
+FullName:Arial Black
+MenuName:Arial Black
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ARIBLK.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:167592
+FileModTime:1721674335
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial Black
+NameArray:0,Win,1,Arial Black
+NameArray:0,Win,16,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ArialCE
+FamilyName:Arial CE
+StyleName:Regular
+FullName:ArialCE
+MenuName:Arial CE
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ArialCE.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:23112
+FileModTime:1721674335
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial CE
+NameArray:0,Win,1,Arial CE
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ArialCE-BoldItalic
+FamilyName:Arial CE
+StyleName:Bold Italic
+FullName:ArialCE-BoldItalic
+MenuName:Arial CE
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ArialCEBoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:33776
+FileModTime:1721674335
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial CE Bold Italic
+NameArray:0,Win,1,Arial CE
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ArialCE-Italic
+FamilyName:Arial CE
+StyleName:Italic
+FullName:ArialCE-Italic
+MenuName:Arial CE
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ArialCEItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:35248
+FileModTime:1721674335
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial CE Italic
+NameArray:0,Win,1,Arial CE
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ArialCEMTBlack-Regular
+FamilyName:Arial CE MT Black
+StyleName:Regular
+FullName:Arial CE MT Black
+MenuName:Arial CE MT Black
+StyleBits:0
+FamilyNameNative:Arial CE MT Black
+StyleNameNative:Regular
+FullNameNative:Arial CE MT Black Regular
+WritingScript:EastEuropeanRoman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ArialCEMTBlack.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:44872
+FileModTime:1721674335
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial CE MT Black
+NameArray:0,Win,1,Arial CE MT Black
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-Mdm
+FamilyName:Arial
+StyleName:Medium
+FullName:Arial-Mdm
+MenuName:Arial
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ArialMdm.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:22208
+FileModTime:1721674335
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial-Medium
+NameArray:0,Win,1,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-MdmItl
+FamilyName:Arial
+StyleName:Medium Italic
+FullName:Arial-MdmItl
+MenuName:Arial
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\ArialMdmItl.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:23156
+FileModTime:1721674335
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial-MediumItalic
+NameArray:0,Win,1,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Black
+FamilyName:Montserrat
+StyleName:Black
+FullName:Montserrat Black
+MenuName:Montserrat Black
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-Black.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:199056
+FileModTime:1721674330
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Montserrat Black
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-BlackItalic
+FamilyName:Montserrat
+StyleName:Black Italic
+FullName:Montserrat Black Italic
+MenuName:Montserrat Black
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-BlackItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:203860
+FileModTime:1721674330
+WeightClass:900
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Montserrat Black
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Bold
+FamilyName:Montserrat
+StyleName:Bold
+FullName:Montserrat Bold
+MenuName:Montserrat
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:198120
+FileModTime:1721674330
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-BoldItalic
+FamilyName:Montserrat
+StyleName:Bold Italic
+FullName:Montserrat Bold Italic
+MenuName:Montserrat
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-BoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:202864
+FileModTime:1721674330
+WeightClass:700
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-ExtraBold
+FamilyName:Montserrat
+StyleName:ExtraBold
+FullName:Montserrat ExtraBold
+MenuName:Montserrat ExtraBold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-ExtraBold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:199276
+FileModTime:1721674330
+WeightClass:800
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Montserrat ExtraBold
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-ExtraBoldItalic
+FamilyName:Montserrat
+StyleName:ExtraBold Italic
+FullName:Montserrat ExtraBold Italic
+MenuName:Montserrat ExtraBold
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-ExtraBoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:203940
+FileModTime:1721674330
+WeightClass:800
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Montserrat ExtraBold
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-ExtraLight
+FamilyName:Montserrat
+StyleName:ExtraLight
+FullName:Montserrat ExtraLight
+MenuName:Montserrat ExtraLight
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-ExtraLight.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:197420
+FileModTime:1721674330
+WeightClass:250
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Montserrat ExtraLight
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-ExtraLightItalic
+FamilyName:Montserrat
+StyleName:ExtraLight Italic
+FullName:Montserrat ExtraLight Italic
+MenuName:Montserrat ExtraLight
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-ExtraLightItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:202276
+FileModTime:1721674330
+WeightClass:250
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Montserrat ExtraLight
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Italic
+FamilyName:Montserrat
+StyleName:Italic
+FullName:Montserrat Italic
+MenuName:Montserrat
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-Italic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:202344
+FileModTime:1721674330
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Light
+FamilyName:Montserrat
+StyleName:Light
+FullName:Montserrat Light
+MenuName:Montserrat Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-Light.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:197716
+FileModTime:1721674330
+WeightClass:300
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Montserrat Light
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-LightItalic
+FamilyName:Montserrat
+StyleName:Light Italic
+FullName:Montserrat Light Italic
+MenuName:Montserrat Light
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-LightItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:202460
+FileModTime:1721674330
+WeightClass:300
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Montserrat Light
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Medium
+FamilyName:Montserrat
+StyleName:Medium
+FullName:Montserrat Medium
+MenuName:Montserrat Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-Medium.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:197756
+FileModTime:1721674330
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Montserrat Medium
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-MediumItalic
+FamilyName:Montserrat
+StyleName:Medium Italic
+FullName:Montserrat Medium Italic
+MenuName:Montserrat Medium
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-MediumItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:202432
+FileModTime:1721674330
+WeightClass:500
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Montserrat Medium
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Regular
+FamilyName:Montserrat
+StyleName:Regular
+FullName:Montserrat Regular
+MenuName:Montserrat
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:197624
+FileModTime:1721674330
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-SemiBold
+FamilyName:Montserrat
+StyleName:SemiBold
+FullName:Montserrat SemiBold
+MenuName:Montserrat SemiBold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-SemiBold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:197964
+FileModTime:1721674330
+WeightClass:600
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Montserrat SemiBold
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-SemiBoldItalic
+FamilyName:Montserrat
+StyleName:SemiBold Italic
+FullName:Montserrat SemiBold Italic
+MenuName:Montserrat SemiBold
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-SemiBoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:202736
+FileModTime:1721674330
+WeightClass:600
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Montserrat SemiBold
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Thin
+FamilyName:Montserrat
+StyleName:Thin
+FullName:Montserrat Thin
+MenuName:Montserrat Thin
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-Thin.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:197104
+FileModTime:1721674330
+WeightClass:250
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Montserrat Thin
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-ThinItalic
+FamilyName:Montserrat
+StyleName:Thin Italic
+FullName:Montserrat Thin Italic
+MenuName:Montserrat Thin
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\Montserrat-ThinItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:201864
+FileModTime:1721674330
+WeightClass:250
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Montserrat Thin
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-BoldMT
+FamilyName:Arial CE
+StyleName:Bold
+FullName:Arial CE Bold
+MenuName:Arial CE
+StyleBits:2
+FamilyNameNative:Arial CE
+StyleNameNative:Bold
+FullNameNative:Arial CE Bold
+WritingScript:EastEuropeanRoman
+OutlineFileName:C:\Users\Usuario\Downloads\TEMPLATES\TEMPLATE_87\Font\arialceb.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:50684
+FileModTime:1721674335
+WeightClass:7
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial CE Bold
+NameArray:0,Win,1,Arial CE
+%EndFont
+
