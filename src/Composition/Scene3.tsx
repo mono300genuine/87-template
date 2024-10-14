@@ -33,7 +33,6 @@ const Scene3: React.FC<Scene3Props> = (props) => {
 
   const rectWidth = 200;
   const whiteRect2Width = 240;
-  const rect3Width = 80;
   const rectWidth2 = 380;
   const rectHeight = Math.sqrt(WIDTH ** 2 + HEIGHT ** 2) * 2;
   const rotation = angle * (180 / Math.PI);
@@ -65,7 +64,7 @@ const Scene3: React.FC<Scene3Props> = (props) => {
   const imageScale = interpolate(
     Math.min(frame, totalDuration),
     [0, transitionDuration, 2 * transitionDuration, totalDuration],
-    [1, 1.03, 0.97, 1],
+    [0, 1.03, 0.97, 1],
     {
       extrapolateRight: 'clamp',
     }

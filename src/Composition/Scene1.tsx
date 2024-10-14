@@ -219,7 +219,6 @@ const Scene1: React.FC<Scene1Props> = (props) => {
                 cx={WIDTH / 2}
                 cy={HEIGHT / 2}
                 fill="none"
-                // opacity={opacity}
                 transform={`
                   scale(${scale})
               `}

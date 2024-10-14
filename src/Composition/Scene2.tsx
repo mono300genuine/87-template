@@ -10,6 +10,7 @@ import { SVGTextCharsFromRightToLeftWithRotation } from '../components/animation
 export const scene2Schema = z.object({
   logo: z.string(),
   img: z.string(),
+  backimg: z.string(),
   title: z.string(),
   voiceOver: z.string(),
 });
@@ -88,7 +89,7 @@ const Scene2: React.FC<Scene2Props> = (props) => {
   const imageScale = interpolate(
     Math.min(frame, totalDuration),
     [0, transitionDuration, 2 * transitionDuration, totalDuration],
-    [1, 1.03, 0.97, 1],
+    [0, 1.03, 1.01, 1],
     {
       extrapolateRight: 'clamp',
     }
@@ -128,7 +129,7 @@ const Scene2: React.FC<Scene2Props> = (props) => {
 
           <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="100%" height="100%">
             <image
-              href={props.img}
+              href={props.backimg}
               x="0"
               y="0"
               width="100%"

@@ -64,22 +64,10 @@ const Scene5: React.FC<Scene2Props> = (props) => {
   const imageScale = interpolate(
     Math.min(frame, totalDuration),
     [0, transitionDuration, 2 * transitionDuration, totalDuration],
-    [1, 1.01, 0.99, 1],
+    [0, 1.03, 1.01, 1],
     {
       extrapolateRight: 'clamp',
     }
-  );
-
-  const xOffset = interpolate(
-    Math.min(frame, totalDuration),
-    [0, transitionDuration, 2 * transitionDuration, totalDuration],
-    [0, -10, -5, 0]
-  );
-
-  const yOffset = interpolate(
-    Math.min(frame, totalDuration),
-    [0, transitionDuration, 2 * transitionDuration, totalDuration],
-    [0, 10, 5, 0]
   );
 
   const centerX = interpolate(sweep, [0, 1], [startX, endX]);
@@ -149,8 +137,8 @@ const Scene5: React.FC<Scene2Props> = (props) => {
             <rect x="0" y="0" width="100%" height="100%" fill="white" opacity={0.8} />
             <image
               href={props.img}
-              x={circleCenterX - circleRadius * imageScale + xOffset}
-              y={circleCenterY - circleRadius * imageScale + yOffset}
+              x={circleCenterX - circleRadius * imageScale}
+              y={circleCenterY - circleRadius * imageScale}
               width={circleRadius * 2 * imageScale}
               height={circleRadius * 2 * imageScale}
               preserveAspectRatio="xMidYMid meet"
