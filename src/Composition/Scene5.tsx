@@ -218,13 +218,13 @@ const Scene5: React.FC<Scene2Props> = (props) => {
         />
 
         {/*  */}
-        <circle
+        {/* <circle
           cx={circleCenterX}
           cy={circleCenterY}
           r={circleRadius * 0.9}
           fill="#3A7FDE"
           mask="url(#mask-1)"
-        />
+        /> */}
 
         {/* Scale 2 */}
         <g transform="scale(1.1)" style={{ transformOrigin: 'center' }}>

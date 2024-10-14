@@ -37,14 +37,14 @@ export const RemotionRoot: React.FC = () => {
             primary: 'Montserrat',
             secondary: 'Abel',
           },
-          transitionDuration: 10,
-          scene1Duration: 160,
+          transitionDuration: 1,
+          scene1Duration: 149,
           scene1Props: {
             logo: staticFile('composition-2/Logo.png'),
             title: 'MEDICARE INSURANCE\n MADE SIMPLE',
             voiceOver: staticFile('composition-2/audio/vo/VO_1.mp3'),
           },
-          scene2Duration: 160,
+          scene2Duration: 150,
           scene2Props: {
             logo: staticFile('composition-2/Logo.png'),
             img: staticFile('composition-2/Media_1-modified.png'),
@@ -52,14 +52,14 @@ export const RemotionRoot: React.FC = () => {
             title: 'OVER 20 YEARS\nOF DEDICATED \nMEDICARE\nEXPERTISE AT\n YOUR SERVICE',
             voiceOver: staticFile('composition-2/audio/vo/VO_2.mp3'),
           },
-          scene3Duration: 160,
+          scene3Duration: 150,
           scene3Props: {
             logo: staticFile('composition-2/Logo.png'),
             img: staticFile('composition-2/Media_2.jpg'),
             title: 'NAVIGATING\n INSURANCE CAN\n BE CONFUSING\n AND OVERWHELMING',
             voiceOver: staticFile('composition-2/audio/vo/VO_3.mp3'),
           },
-          scene4Duration: 160,
+          scene4Duration: 150,
           scene4Props: {
             logo: staticFile('composition-2/Logo.png'),
             backimg: staticFile('composition-2/Media_6.jpg'),
@@ -67,7 +67,7 @@ export const RemotionRoot: React.FC = () => {
             title: 'OUR\n KNOWLEDGEABLE\n STAFF SIMPLIFIES\n THE PROCESS',
             voiceOver: staticFile('composition-2/audio/vo/VO_4.mp3'),
           },
-          scene5Duration: 160,
+          scene5Duration: 150,
           scene5Props: {
             logo: staticFile('composition-2/Logo.png'),
             backimg: staticFile('composition-2/Media_4.jpg'),
@@ -75,7 +75,7 @@ export const RemotionRoot: React.FC = () => {
             title: 'ENJOY PEACE\n OF MIND\n WITH THE\n RIGHT MEDICARE',
             voiceOver: staticFile('composition-2/audio/vo/VO_5.mp3'),
           },
-          scene6Duration: 160,
+          scene6Duration: 150,
           scene6Props: {
             logo: staticFile('composition-2/Logo.png'),
             title: 'CONTACT HEALTH INSURANCE\nASSOCIATES TODAY',
