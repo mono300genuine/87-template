@@ -37,6 +37,7 @@ const Scene3: React.FC<Scene3Props> = (props) => {
   const rectWidth2 = 380;
   const rectHeight = Math.sqrt(WIDTH ** 2 + HEIGHT ** 2) * 2;
   const rotation = angle * (180 / Math.PI);
+  const bigCircleRadius = WIDTH * 0.3;
   // const progress = interpolate(frame, [0, duration], [0, 1], {
   //   extrapolateRight: 'clamp',
   // });
@@ -54,7 +55,7 @@ const Scene3: React.FC<Scene3Props> = (props) => {
   const totalDuration = 3 * transitionDuration; // Total duration for all 3 transitions (only once)
 
   const sweep = defaultSpring({
-    delay: 35,
+    delay: 30,
     frame,
     durationInFrames: 150,
     from: 0,
@@ -85,6 +86,16 @@ const Scene3: React.FC<Scene3Props> = (props) => {
   const circleCenterY = HEIGHT / 2;
   const circleRadius = Math.min(WIDTH, HEIGHT) * 0.4;
 
+
+  const animationDuration = 60; // 2 seconds at 30fps
+  const circleAnimation = interpolate(
+    Math.min(frame, animationDuration * 2),
+    [0, animationDuration, animationDuration * 2],
+    [1, 1.1, 1],
+    {
+      extrapolateRight: 'clamp',
+    }
+  );
 
   return (
     <AbsoluteFill style={{ display: 'flex', ...titleSplit.style }}>
@@ -119,14 +130,14 @@ const Scene3: React.FC<Scene3Props> = (props) => {
                   fill="#3A7FDE"
                   cx={bigCircleX}
                   cy={bigCircleY}
-                  r={bigCirleRadius}
+                  r={bigCircleRadius * circleAnimation}
                   opacity={0.7}
                 />
                 <circle
                   fill="#3A7FDE"
                   cx={bigCircleX}
                   cy={bigCircleY}
-                  r={bigCirleRadius * 0.9}
+                  r={bigCircleRadius * 0.9 * circleAnimation}
                   opacity={0.2}
                 />
               </g>
@@ -183,7 +194,7 @@ const Scene3: React.FC<Scene3Props> = (props) => {
           </g>
 
           <image y="85%" x="72%" href={props.logo} />
-          
+
           <g transform="translate(100,560)">
             <SVGTextCharsFromRightToLeftWithRotation
               text={titleSplit.text}

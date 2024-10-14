@@ -36,6 +36,7 @@ const Scene4: React.FC<Scene4Props> = (props) => {
   const rect3Width = 80;
   const rectWidth2 = 380;
   const rectHeight = Math.sqrt(WIDTH ** 2 + HEIGHT ** 2) * 2;
+  const bigCircleRadius = WIDTH * 0.3;
 
   const startX = WIDTH + (rectHeight / 2) * Math.cos(angle);
   const startY = (-rectHeight / 2) * Math.sin(angle);
@@ -44,7 +45,7 @@ const Scene4: React.FC<Scene4Props> = (props) => {
   const endY = HEIGHT + (rectHeight / 2) * Math.sin(angle);
 
   const sweep = defaultSpring({
-    delay: 35,
+    delay: 30,
     frame,
     durationInFrames: 150,
     from: 0,
@@ -96,6 +97,7 @@ const Scene4: React.FC<Scene4Props> = (props) => {
     }
   );
 
+
   const xOffset = interpolate(
     Math.min(frame, totalDuration),
     [0, transitionDuration, 2 * transitionDuration, totalDuration],
@@ -106,6 +108,16 @@ const Scene4: React.FC<Scene4Props> = (props) => {
     Math.min(frame, totalDuration),
     [0, transitionDuration, 2 * transitionDuration, totalDuration],
     [0, 10, 5, 0]
+  );
+
+  const animationDuration = 60; // 2 seconds at 30fps
+  const circleAnimation = interpolate(
+    Math.min(frame, animationDuration * 2),
+    [0, animationDuration, animationDuration * 2],
+    [1, 1.1, 1],
+    {
+      extrapolateRight: 'clamp',
+    }
   );
 
   return (
@@ -146,14 +158,14 @@ const Scene4: React.FC<Scene4Props> = (props) => {
                 fill="#3A7FDE"
                 cx={bigCircleX}
                 cy={bigCircleY}
-                r={bigCirleRadius}
+                r={bigCircleRadius * circleAnimation}
                 opacity={0.7}
               />
               <circle
                 fill="#3A7FDE"
                 cx={bigCircleX}
                 cy={bigCircleY}
-                r={bigCirleRadius * 0.9}
+                r={bigCircleRadius * 0.9 * circleAnimation}
                 opacity={0.2}
               />
             </g>

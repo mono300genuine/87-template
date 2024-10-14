@@ -37,6 +37,8 @@ const Scene2: React.FC<Scene2Props> = (props) => {
   const rectWidth2 = 380;
   const rectHeight = Math.sqrt(WIDTH ** 2 + HEIGHT ** 2) * 2;
 
+  const bigCircleRadius = WIDTH * 0.3;
+
   // const progress = interpolate(frame, [0, duration], [0, 1], {
   //   extrapolateRight: 'clamp',
   // });
@@ -48,7 +50,7 @@ const Scene2: React.FC<Scene2Props> = (props) => {
   const endY = HEIGHT + (rectHeight / 2) * Math.sin(angle);
 
   const sweep = defaultSpring({
-    delay: 35,
+    delay: 30,
     frame,
     durationInFrames: 150,
     from: 0,
@@ -100,6 +102,16 @@ const Scene2: React.FC<Scene2Props> = (props) => {
     to: circleRadius,
   });
 
+  const animationDuration = 60; // 2 seconds at 30fps
+  const circleAnimation = interpolate(
+    Math.min(frame, animationDuration * 2),
+    [0, animationDuration, animationDuration * 2],
+    [1, 1.1, 1],
+    {
+      extrapolateRight: 'clamp',
+    }
+  );
+
   return (
     <AbsoluteFill style={{ display: 'flex', ...titleSplit.style }}>
       <Audio src={props.voiceOver} />
@@ -138,14 +150,14 @@ const Scene2: React.FC<Scene2Props> = (props) => {
                 fill="#3A7FDE"
                 cx={bigCircleX}
                 cy={bigCircleY}
-                r={bigCirleRadius}
+                r={bigCircleRadius * circleAnimation}
                 opacity={0.7}
               />
               <circle
                 fill="#3A7FDE"
                 cx={bigCircleX}
                 cy={bigCircleY}
-                r={bigCirleRadius * 0.9}
+                r={bigCircleRadius * 0.9 * circleAnimation}
                 opacity={0.2}
               />
             </g>

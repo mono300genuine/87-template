@@ -49,9 +49,9 @@ const Scene5: React.FC<Scene2Props> = (props) => {
   const endY = HEIGHT + (rectHeight / 2) * Math.sin(angle);
 
   const sweep = defaultSpring({
-    delay: 35,
+    delay: 30,
     frame,
-    durationInFrames: 120,
+    durationInFrames: 150,
     from: 0,
     to: 1,
   });
@@ -60,7 +60,7 @@ const Scene5: React.FC<Scene2Props> = (props) => {
   const fps = 30; // Assuming 30 fps
   const transitionDuration = 1 * fps; // 1 second duration
   const totalDuration = 3 * transitionDuration; // Total duration for all 3 transitions (only once)
-  
+
   const imageScale = interpolate(
     Math.min(frame, totalDuration),
     [0, transitionDuration, 2 * transitionDuration, totalDuration],
@@ -113,6 +113,16 @@ const Scene5: React.FC<Scene2Props> = (props) => {
     to: circleRadius,
   });
 
+  const animationDuration = 60; // 2 seconds at 30fps
+  const circleAnimation = interpolate(
+    Math.min(frame, animationDuration * 2),
+    [0, animationDuration, animationDuration * 2],
+    [1, 1.1, 1],
+    {
+      extrapolateRight: 'clamp',
+    }
+  );
+
   return (
     <AbsoluteFill style={{ display: 'flex', ...titleSplit.style }}>
       <Audio src={props.voiceOver} />
@@ -151,14 +161,14 @@ const Scene5: React.FC<Scene2Props> = (props) => {
                 fill="#3A7FDE"
                 cx={bigCircleX}
                 cy={bigCircleY}
-                r={bigCirleRadius}
+                r={bigCirleRadius * circleAnimation}
                 opacity={0.7}
               />
               <circle
                 fill="#3A7FDE"
                 cx={bigCircleX}
                 cy={bigCircleY}
-                r={bigCirleRadius * 0.9}
+                r={bigCirleRadius * 0.9 * circleAnimation}
                 opacity={0.2}
               />
             </g>
