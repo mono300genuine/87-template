@@ -95,6 +95,15 @@ const Scene2: React.FC<Scene2Props> = (props) => {
     }
   );
 
+  const circle = interpolate(
+    Math.min(frame, totalDuration),
+    [0, transitionDuration, 2 * transitionDuration, totalDuration],
+    [0, 0.7, 0.7, 1],
+    {
+      extrapolateRight: 'clamp',
+    }
+  );
+
   const r = defaultSpring({
     frame,
     delay: 0,
@@ -223,7 +232,7 @@ const Scene2: React.FC<Scene2Props> = (props) => {
         <circle
           cx={circleCenterX}
           cy={circleCenterY}
-          r={circleRadius * 0.9}
+          r={circleRadius * circle}
           fill="#3A7FDE"
           mask="url(#mask-1)"
         />
@@ -246,7 +255,7 @@ const Scene2: React.FC<Scene2Props> = (props) => {
 
         <image y="85%" x="72%" href={props.logo} />
 
-        <g transform="translate(1100,100)">
+        <g transform="translate(1100,200)">
           <SVGTextCharsFromRightToLeftWithRotation
             text={titleSplit.text}
             color={colorVar('primaryText')}

@@ -244,7 +244,7 @@ const Scene5: React.FC<Scene2Props> = (props) => {
 
         <image y="85%" x="72%" href={props.logo} />
 
-        <g transform="translate(1100,100)">
+        <g transform="translate(1100,200)">
           <SVGTextCharsFromRightToLeftWithRotation
             text={titleSplit.text}
             color={colorVar('primaryText')}

@@ -30,6 +30,7 @@ const Scene4: React.FC<Scene4Props> = (props) => {
   const rotation = -angle * (180 / Math.PI);
 
   console.log(titleSplit.text, 'LINESS');
+  
 
   const rectWidth = 200;
   const whiteRect2Width = 240;
@@ -67,14 +68,6 @@ const Scene4: React.FC<Scene4Props> = (props) => {
   const circleCenterY = HEIGHT / 2;
   const circleRadius = Math.min(WIDTH, HEIGHT) * 0.4;
 
-  const spring = defaultSpring({
-    frame,
-    delay: 0,
-    durationInFrames: 30,
-    from: circleCenterX + 50,
-    to: circleCenterX,
-  });
-
   const r = defaultSpring({
     frame,
     delay: 0,
@@ -106,6 +99,14 @@ const Scene4: React.FC<Scene4Props> = (props) => {
       extrapolateRight: 'clamp',
     }
   );
+
+  const spring = defaultSpring({
+    frame,
+    delay: 5,
+    durationInFrames: 30,
+    from: circleCenterX - 50,
+    to: circleCenterX,
+  });
 
   return (
     <AbsoluteFill style={{ display: 'flex', ...titleSplit.style }}>
@@ -212,6 +213,14 @@ const Scene4: React.FC<Scene4Props> = (props) => {
           fill="url(#imagePattern)"
         />
 
+        {/* <circle
+          cx={circleCenterX}
+          cy={circleCenterY}
+          r={circleRadius * 0.9}
+          fill="#3A7FDE"
+          mask="url(#mask-1)"
+        /> */}
+
         <g transform="scale(1.1)" style={{ transformOrigin: 'center' }}>
           <use href="#scene-4-patterned-rect" clipPath="url(#scene-4-sweep-clip-1)" />
           <use href="#diagonal-4" fill="#FFF" opacity={0.6} />
@@ -229,7 +238,7 @@ const Scene4: React.FC<Scene4Props> = (props) => {
 
         <image y="85%" x="8%" href={props.logo} />
 
-        <g transform="translate(100,100)">
+        <g transform="translate(100,200)">
           <SVGTextCharsFromRightToLeftWithRotation
             text={titleSplit.text}
             color={colorVar('primaryText')}
