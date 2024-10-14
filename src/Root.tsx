@@ -61,14 +61,16 @@ export const RemotionRoot: React.FC = () => {
           scene4Duration: 180,
           scene4Props: {
             logo: staticFile('composition-2/Logo.png'),
-            img: staticFile('composition-2/Media_6.jpg'),
+            img: staticFile('composition-2/Media_5.jpg'),
+            backimg: staticFile('composition-2/Media_6.jpg'),
             title: 'OUR\n KNOWLEDGEABLE\n STAFF SIMPLIFIES\n THE PROCESS',
             voiceOver: staticFile('composition-2/audio/vo/VO_4.mp3'),
           },
           scene5Duration: 180,
           scene5Props: {
             logo: staticFile('composition-2/Logo.png'),
-            img: staticFile('composition-2/Media_4.jpg'),
+            img: staticFile('composition-2/Media_4(1).jpg'),
+            backimg: staticFile('composition-2/Media_4.jpg'),
             title: 'ENJOY PEACE\n OF MIND\n WITH THE\n RIGHT MEDICARE',
             voiceOver: staticFile('composition-2/audio/vo/VO_5.mp3'),
           },

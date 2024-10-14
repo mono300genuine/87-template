@@ -139,7 +139,7 @@ const Scene1: React.FC<Scene1Props> = (props) => {
     },
   });
 
-  const scale = interpolate(frame, [0, 30, 120], [0.1, slowScale, fastScale], {
+  const scale = interpolate(frame, [0, 30, 120], [0.3, slowScale, fastScale], {
     extrapolateRight: 'clamp',
   });
 

@@ -87,35 +87,59 @@ const Main: React.FC<MainProps> = ({
             <Scene1 {...scene1Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
-            presentation={splitCenterPresentation({ height: HEIGHT, width: WIDTH, rotation: 90 })}
+            presentation={splitCenterPresentation({
+              height: HEIGHT,
+              width: WIDTH,
+              rotation: 90,
+              backgroundColor: "#4ea3d2",  // Change this color as needed
+              strokeColor: "#ffffff"  // Change this color as needed
+            })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
           <TransitionSeries.Sequence durationInFrames={scene2Duration} name="Scene 2">
             <Scene2 {...scene2Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
-            presentation={splitCenterPresentation({ height: HEIGHT, width: WIDTH, rotation: 90 })}
+            presentation={splitCenterPresentation({
+              height: HEIGHT,
+              width: WIDTH,
+              rotation: 90,
+              backgroundColor: "#4ea3d2",  // Change this color as needed
+              strokeColor: "#ffffff"  // Change this color as needed
+            })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
           <TransitionSeries.Sequence durationInFrames={scene3Duration} name="Scene 3">
             <Scene3 {...scene3Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
-            presentation={splitCenterPresentation({ height: HEIGHT, width: WIDTH, rotation: 90 })}
+            presentation={splitCenterPresentation({
+              height: HEIGHT,
+              width: WIDTH,
+              rotation: 90,
+              backgroundColor: "#ffffff",  // Change this color as needed
+              strokeColor: "blue"  // Change this color as needed
+            })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
           <TransitionSeries.Sequence durationInFrames={scene4Duration} name="Scene 4">
             <Scene4 {...scene4Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
-            presentation={splitCenterPresentation({ height: HEIGHT, width: WIDTH, rotation: 90 })}
+            presentation={splitCenterPresentation({
+              height: HEIGHT,
+              width: WIDTH,
+              rotation: 90,
+              backgroundColor: "#4ea3d2",  // Change this color as needed
+              strokeColor: "#ffffff"  // Change this color as needed
+            })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
           <TransitionSeries.Sequence durationInFrames={scene5Duration} name="Scene 5">
             <Scene5 {...scene5Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
-            presentation={splitCenterPresentation({ height: HEIGHT, width: WIDTH, rotation: 90 })}
+            presentation={WideSlidePresentation({ direction: 'from-right' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
           <TransitionSeries.Sequence durationInFrames={scene6Duration} name="Scene 6">

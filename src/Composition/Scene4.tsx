@@ -1,187 +1,243 @@
-import { AbsoluteFill, Audio, Img, interpolate, useCurrentFrame } from 'remotion';
-
+import { AbsoluteFill, Audio, interpolate, useCurrentFrame } from 'remotion';
 import { z } from 'zod';
-import { Background } from '../components/Background';
 import { BackgroundProps } from '../backgrounds';
 import { HEIGHT, WIDTH } from '../lib/consts';
-import { defaultSpring } from '../lib/helpers';
+import { colorVar, defaultSpring } from '../lib/helpers';
+import { useTextSplitter } from '../lib/useTextSplitter';
+import { TextCharsFromRightToLeftWithRotation } from '../components/animations/TextCharsFromRightToLeftWithRotation';
+import { SVGTextCharsFromRightToLeftWithRotation } from '../components/animations/SVGTextCharsFromRightToLeftWithRotation';
 
 export const scene4Schema = z.object({
   logo: z.string(),
   img: z.string(),
+  backimg: z.string(),
   title: z.string(),
   voiceOver: z.string(),
 });
 type Scene4Props = z.infer<typeof scene4Schema> & { background: BackgroundProps };
 
 const Scene4: React.FC<Scene4Props> = (props) => {
-  const diagonalLength = Math.sqrt(WIDTH ** 2 + HEIGHT ** 2);
-  // Calculate progress of diagonal rect
-  const theta = Math.atan2(HEIGHT, WIDTH);
-
   const frame = useCurrentFrame();
+  const titleSplit = useTextSplitter({
+    text: props.title.toUpperCase(),
+    fontSize: 100,
+    fontWeight: '800',
+    letterSpacing: '6px',
+    maxLines: 4,
+    maxWidth: 900,
+  });
+  const angle = Math.atan2(2 * HEIGHT, WIDTH);
+  const rotation = -angle * (180 / Math.PI);
 
-  const x = interpolate(frame, [0, 1], [0, WIDTH * Math.cos(theta)]);
-  const y = interpolate(frame, [0, 1], [0, HEIGHT * Math.sin(theta)]);
+  console.log(titleSplit.text, 'LINESS');
 
-  const circleCenterX = WIDTH - WIDTH / 4;
+  const rectWidth = 200;
+  const whiteRect2Width = 240;
+  const rect3Width = 80;
+  const rectWidth2 = 380;
+  const rectHeight = Math.sqrt(WIDTH ** 2 + HEIGHT ** 2) * 2;
+
+  const startX = WIDTH + (rectHeight / 2) * Math.cos(angle);
+  const startY = (-rectHeight / 2) * Math.sin(angle);
+
+  const endX = (-rectHeight / 2) * Math.cos(angle);
+  const endY = HEIGHT + (rectHeight / 2) * Math.sin(angle);
+
+  const sweep = defaultSpring({
+    delay: 35,
+    frame,
+    durationInFrames: 150,
+    from: 0,
+    to: 1,
+  });
+
+  const centerX = interpolate(sweep, [0, 1], [startX, endX]);
+  const centerY = interpolate(sweep, [0, 1], [startY, endY]);
+
+  const x = centerX - rectWidth / 2;
+  const y = centerY - rectHeight / 2;
+  const x2 = centerX - rectWidth2 / 2;
+
+  const bigCirleRadius = WIDTH * 0.3;
+  const bigCircleX = bigCirleRadius / 2;
+  const bigCircleY = HEIGHT + HEIGHT / 2 - bigCirleRadius / 2;
+
+  const circleCenterX = (WIDTH * 3) / 4;
   const circleCenterY = HEIGHT / 2;
   const circleRadius = Math.min(WIDTH, HEIGHT) * 0.4;
 
   const spring = defaultSpring({
     frame,
-    delay: 30,
+    delay: 0,
     durationInFrames: 30,
-    from: circleCenterX - 50,
-    to: circleCenterX - 50,
+    from: circleCenterX + 50,
+    to: circleCenterX,
   });
 
-  const mask1Radius = defaultSpring({
+  const r = defaultSpring({
     frame,
-    delay: 30,
+    delay: 0,
     durationInFrames: 30,
     from: circleRadius * 0.4,
     to: circleRadius,
   });
 
-  const mask2Radius = defaultSpring({
-    frame,
-    delay: 40,
-    durationInFrames: 30,
-    from: circleRadius * 0.2,
-    to: circleRadius,
-  });
+  // Image transition logic
+  const fps = 30; // Assuming 30 fps
+  const transitionDuration = 1 * fps; // 1 second duration
+  const totalDuration = 3 * transitionDuration; // Total duration for all 3 transitions (only once)
+
+  const imageScale = interpolate(
+    Math.min(frame, totalDuration),
+    [0, transitionDuration, 2 * transitionDuration, totalDuration],
+    [1, 1.01, 0.99, 1],
+    {
+      extrapolateRight: 'clamp',
+    }
+  );
+
+  const xOffset = interpolate(
+    Math.min(frame, totalDuration),
+    [0, transitionDuration, 2 * transitionDuration, totalDuration],
+    [0, -10, -5, 0]
+  );
+
+  const yOffset = interpolate(
+    Math.min(frame, totalDuration),
+    [0, transitionDuration, 2 * transitionDuration, totalDuration],
+    [0, 10, 5, 0]
+  );
 
   return (
-    <>
-      <AbsoluteFill>
-        <Audio src={props.voiceOver} />
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
-          <defs>
-            <clipPath id="scene-4-clip-path">
-              <circle cx={circleCenterX} cy={circleCenterY} r={circleRadius} />
-            </clipPath>
-            <pattern
-              id="scene-4-image-pattern"
-              patternUnits="userSpaceOnUse"
+    <AbsoluteFill style={{ display: 'flex', ...titleSplit.style }}>
+      <Audio src={props.voiceOver} />
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+        <defs>
+          <filter id="blur-filter" x="0" y="0">
+            <feGaussianBlur stdDeviation="10" />
+          </filter>
+
+          <clipPath id="circle-clip">
+            <circle cx={circleCenterX} cy={circleCenterY} r={circleRadius} />
+          </clipPath>
+
+          <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="100%" height="100%">
+            <image
+              href={props.backimg}
+              x="0"
+              y="0"
               width="100%"
               height="100%"
-            >
-              <image
-                href={props.img}
-                width="100%"
-                height="100%"
-                preserveAspectRatio="xMidYMid slice"
-              />
-              <rect x="0" y="0" fill="white" width="100%" height="100%" opacity="0.9" />
-              <image
-                href={props.img}
-                width="100%"
-                height="100%"
-                preserveAspectRatio="xMidYMid meet"
-                clipPath="url(#scene-4-clip-path)"
-              />
-            </pattern>
-
-            {/* Need to tint this image with a floodFilter */}
-
-            {/* <pattern
-              id="scene-4-image-pattern-2"
-              patternUnits="userSpaceOnUse"
-              width="100%"
-              height="100%"
-              patternTransform="scale(1.04)"
-            >
-              <image
-                href={props.img}
-                width="100%"
-                height="100%"
-                preserveAspectRatio="xMidYMid slice"
-                style={{
-                  filter: 'hue-rotate(210deg)',
-                }}
-              />
-            </pattern> */}
-            <clipPath id="scene-4-circle-clip">
-              <circle cx="1400" cy="350" r="20%" />
-            </clipPath>
-            <mask id="scene-4-mask-1">
-              <rect x="0" y="0" width="100%" height="100%" fill="white" />
-              <circle
-                cx={spring}
-                cy={circleCenterY}
-                r={mask1Radius}
-                fill="black"
-                filter="url(#scene-4-mask-blur-filter)"
-              />
-            </mask>
-            <mask id="scene-4-mask-2">
-              <rect x="0" y="0" width="100%" height="100%" fill="white" />
-              <circle
-                cx={spring}
-                cy={circleCenterY}
-                r={mask2Radius}
-                fill="black"
-                filter="url(#scene-4-mask-blur-filter)"
-              />
-            </mask>
-          </defs>
-
-          <circle
-            cx={circleCenterX}
-            cy={circleCenterY}
-            r={circleRadius}
-            fill="url(#scene-4-image-pattern)"
-          />
-
-          {/* Scaled Circle For Blue Opacity Mask */}
-          {/* <circle
-            cx={circleCenterX}
-            cy={circleCenterY}
-            r={circleRadius}
-            fill="url(#scene-4-image-pattern)"
-          />
-
-          <circle
-            cx={circleCenterX}
-            cy={circleCenterY}
-            r={circleRadius * 0.6}
-            mask="url(#scene-4-mask-2)"
-            fill="url(#scene-4-image-pattern-2)"
-          />
-
-          <circle
-            cx={circleCenterX}
-            cy={circleCenterY}
-            r={circleRadius * 0.9}
-            fill="#3A7FDE"
-            mask="url(#scene-4-mask-1)"
-          /> */}
-
-          <g clipPath="url(#scene-4-sweep-clip)">
-            <rect
-              width="100%"
-              height="100%"
-              // transform="scale(1.1)"
-              fill="url(#scene-4-image-pattern)"
-              // clipPath="url(#scene-4-circle-clip)"
+              preserveAspectRatio="xMidYMid slice"
             />
-          </g>
-          <use href="#yellow" fill="yellow" opacity={0.8} />
-          <use href="#blue" fill="blue" opacity={0.8} />
+            <rect x="0" y="0" width="100%" height="100%" fill="white" opacity={0.8} />
+            <image
+              href={props.img}
+              x={circleCenterX - circleRadius * imageScale + xOffset}
+              y={circleCenterY - circleRadius * imageScale + yOffset}
+              width={circleRadius * 2 * imageScale}
+              height={circleRadius * 2 * imageScale}
+              preserveAspectRatio="xMidYMid meet"
+              clipPath="url(#circle-clip)"
+            />
+            <g>
+              <circle
+                fill="#3A7FDE"
+                cx={bigCircleX}
+                cy={bigCircleY}
+                r={bigCirleRadius}
+                opacity={0.7}
+              />
+              <circle
+                fill="#3A7FDE"
+                cx={bigCircleX}
+                cy={bigCircleY}
+                r={bigCirleRadius * 0.9}
+                opacity={0.2}
+              />
+            </g>
+          </pattern>
 
-          {/* <circle
-              fill="#3A7FDE"
-              cx={bigCircleX}
-              cy={bigCircleY}
-              r={bigCirleRadius}
-              opacity={0.7}
-            /> */}
-          {/* <circle fill="#3A7FDE" cx={bigCircleX} cy={bigCircleY} r={'30%'} opacity={0.2} /> */}
-          {/* <image href={props.logo} width={WIDTH} height={HEIGHT} /> */}
-        </svg>
-      </AbsoluteFill>
-    </>
+          <clipPath id="scene-4-sweep-clip">
+            <rect
+              id="diagonal-1"
+              x={x - 50}
+              y={y - 50}
+              width={rect3Width}
+              height={rectHeight}
+              transform={`rotate(${rotation}, ${centerX}, ${centerY})`}
+            />
+
+            <rect
+              id="diagonal-3"
+              x={x + 200}
+              y={y + 200}
+              width={rectWidth}
+              height={rectHeight}
+              transform={`rotate(${rotation}, ${centerX}, ${centerY})`}
+            />
+          </clipPath>
+
+          <clipPath id="scene-4-sweep-clip-1">
+            <rect
+              id="diagonal-2"
+              x={x2 + 90}
+              y={y + 90}
+              width={whiteRect2Width}
+              height={rectHeight}
+              transform={`rotate(${rotation}, ${centerX}, ${centerY})`}
+            />
+            <rect
+              id="diagonal-4"
+              x={x2}
+              y={y}
+              width={rectWidth2}
+              height={rectHeight}
+              transform={`rotate(${rotation}, ${centerX}, ${centerY})`}
+            />
+          </clipPath>
+
+          <mask id="mask-1">
+            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+            <circle cx={spring} cy={circleCenterY} r={r} fill="black" filter="url(#blur-filter)" />
+          </mask>
+        </defs>
+
+        <rect
+          id="scene-4-patterned-rect"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          fill="url(#imagePattern)"
+        />
+
+        <g transform="scale(1.1)" style={{ transformOrigin: 'center' }}>
+          <use href="#scene-4-patterned-rect" clipPath="url(#scene-4-sweep-clip-1)" />
+          <use href="#diagonal-4" fill="#FFF" opacity={0.6} />
+        </g>
+
+        <g transform="scale(1.2)" style={{ transformOrigin: 'center' }}>
+          <use href="#scene-4-patterned-rect" clipPath="url(#scene-4-sweep-clip)" />
+          <use href="#diagonal-3" fill="#3A7FDE" opacity={1} />
+          <use href="#diagonal-1" fill="#3A7FDE" opacity={0.7} />
+        </g>
+
+        <g transform="scale(1.1)" style={{ transformOrigin: 'center' }}>
+          <use href="#diagonal-2" fill="#FFF" opacity={0.3} />
+        </g>
+
+        <image y="85%" x="8%" href={props.logo} />
+
+        <g transform="translate(100,100)">
+          <SVGTextCharsFromRightToLeftWithRotation
+            text={titleSplit.text}
+            color={colorVar('primaryText')}
+          />
+        </g>
+      </svg>
+    </AbsoluteFill>
   );
 };
 

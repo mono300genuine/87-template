@@ -1,35 +1,20 @@
-import { getBoundingBox, translatePath } from '@remotion/paths';
-import { makeRect } from '@remotion/shapes';
 import type { TransitionPresentationComponentProps } from '@remotion/transitions';
 import type { TransitionPresentation } from '@remotion/transitions';
 import React, { useMemo, useState } from 'react';
 import { AbsoluteFill, random } from 'remotion';
-import { WIDTH } from '../lib/consts';
+import { WIDTH, HEIGHT } from '../lib/consts';
 
 export type CustomPresentationProps = {
   width: number;
   height: number;
   rotation: number;
+  backgroundColor: string;
+  strokeColor: string;
 };
 
-const rectWidenPresentation: React.FC<
+const rectPresentation: React.FC<
   TransitionPresentationComponentProps<CustomPresentationProps>
 > = ({ children, presentationDirection, presentationProgress, passedProps }) => {
-  const finishedRadius = Math.sqrt(passedProps.width ** 2 + passedProps.height ** 2) / 2;
-  const _height = finishedRadius * presentationProgress;
-
-  const { path } = makeRect({
-    height: _height * 4,
-    width: passedProps.width * 4,
-  });
-
-  const boundingBox = getBoundingBox(path);
-  const translatedPath = translatePath(
-    path,
-    passedProps.width / 2 - boundingBox.width / 2,
-    passedProps.height / 2 - boundingBox.height / 2
-  );
-
   const [clipId] = useState(() => String(random(null)));
   const [filterId] = useState(() => String(random(null)));
 
@@ -41,6 +26,8 @@ const rectWidenPresentation: React.FC<
     };
   }, [clipId, presentationDirection]);
 
+  const rectWidth = (WIDTH / 2) * (1 - presentationProgress);
+
   return (
     <AbsoluteFill style={{ zIndex: 9 }}>
       <AbsoluteFill style={style}>{children}</AbsoluteFill>
@@ -50,45 +37,36 @@ const rectWidenPresentation: React.FC<
             style={{ position: 'absolute', top: 0, left: 0, zIndex: 999 }}
             width="100%"
             height="100%"
-            viewBox="0 0 1920 1080"
+            viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
           >
             <defs>
-              {/* We use rect so we can have fake an outer stroke blur.  */}
-              <rect
-                id="gate"
-                height="130%"
-                y="-15%"
-                width="50%"
-                fill="none"
-                stroke="#4ea3d2"
-                strokeWidth="200"
-                filter={`url(#${filterId})`}
-              />
               <clipPath id={clipId}>
-                <rect
-                  x={WIDTH / 2 - 960 * presentationProgress}
-                  width={1920 * presentationProgress}
-                  height="100%"
-                />
+                <rect x={rectWidth} width={WIDTH - 2 * rectWidth} height={HEIGHT} />
               </clipPath>
               <filter id={filterId}>
                 <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
               </filter>
             </defs>
 
-            <use
-              href="#gate"
-              fill="none"
-              stroke="#4ea3d2"
-              strokeWidth="200"
-              x={(-960 - 100) * presentationProgress}
+            <rect
+              x={0}
+              y={0}
+              width={rectWidth}
+              height={HEIGHT}
+              fill={passedProps.backgroundColor}
+              stroke={passedProps.strokeColor}
+              strokeWidth="2"
+              filter={`url(#${filterId})`}
             />
-            <use
-              href="#gate"
-              fill="none"
-              stroke="#4ea3d2"
-              strokeWidth="200"
-              x={960 + (960 + 100) * presentationProgress}
+            <rect
+              x={WIDTH - rectWidth}
+              y={0}
+              width={rectWidth}
+              height={HEIGHT}
+              fill={passedProps.backgroundColor}
+              stroke={passedProps.strokeColor}
+              strokeWidth="2"
+              filter={`url(#${filterId})`}
             />
           </svg>
         </AbsoluteFill>
@@ -100,5 +78,5 @@ const rectWidenPresentation: React.FC<
 export const splitCenterPresentation = (
   props: CustomPresentationProps
 ): TransitionPresentation<CustomPresentationProps> => {
-  return { component: rectWidenPresentation, props };
+  return { component: rectPresentation, props };
 };

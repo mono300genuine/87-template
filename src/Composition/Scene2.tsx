@@ -26,7 +26,7 @@ const Scene2: React.FC<Scene2Props> = (props) => {
     maxLines: 4,
     maxWidth: 900,
   });
-  const angle = Math.atan2(HEIGHT, WIDTH);
+  const angle = Math.atan2(2 * HEIGHT, WIDTH);
   const rotation = angle * (180 / Math.PI);
 
   console.log(titleSplit.text, 'LINESS');
@@ -48,9 +48,9 @@ const Scene2: React.FC<Scene2Props> = (props) => {
   const endY = HEIGHT + (rectHeight / 2) * Math.sin(angle);
 
   const sweep = defaultSpring({
-    delay: 30,
+    delay: 35,
     frame,
-    durationInFrames: 120,
+    durationInFrames: 150,
     from: 0,
     to: 1,
   });
@@ -77,6 +77,20 @@ const Scene2: React.FC<Scene2Props> = (props) => {
     from: circleCenterX - 50,
     to: circleCenterX,
   });
+
+  // Image transition logic
+  const fps = 30; // Assuming 30 fps
+  const transitionDuration = 1 * fps; // 1 second duration
+  const totalDuration = 3 * transitionDuration; // Total duration for all 3 transitions (only once)
+
+  const imageScale = interpolate(
+    Math.min(frame, totalDuration),
+    [0, transitionDuration, 2 * transitionDuration, totalDuration],
+    [1, 1.03, 0.97, 1],
+    {
+      extrapolateRight: 'clamp',
+    }
+  );
 
   const r = defaultSpring({
     frame,
@@ -112,10 +126,10 @@ const Scene2: React.FC<Scene2Props> = (props) => {
             <rect x="0" y="0" width="100%" height="100%" fill="white" opacity={0.8} />
             <image
               href={props.img}
-              x={circleCenterX - circleRadius}
-              y={circleCenterY - circleRadius}
-              width={circleRadius * 2}
-              height={circleRadius * 2}
+              x={circleCenterX - circleRadius * imageScale}
+              y={circleCenterY - circleRadius * imageScale}
+              width={circleRadius * 2 * imageScale}
+              height={circleRadius * 2 * imageScale}
               preserveAspectRatio="xMidYMid meet"
               clipPath="url(#circle-clip)"
             />
@@ -209,8 +223,8 @@ const Scene2: React.FC<Scene2Props> = (props) => {
 
         <g transform="scale(1.2)" style={{ transformOrigin: 'center' }}>
           <use href="#scene-2-patterned-rect" clipPath="url(#scene-2-sweep-clip)" />
-          <use href="#diagonal-3" fill="blue" opacity={0.5} />
-          <use href="#diagonal-1" fill="blue" opacity={0.2} />
+          <use href="#diagonal-3" fill="#3A7FDE" opacity={1} />
+          <use href="#diagonal-1" fill="#3A7FDE" opacity={0.8} />
         </g>
 
         <g transform="scale(1.1)" style={{ transformOrigin: 'center' }}>
